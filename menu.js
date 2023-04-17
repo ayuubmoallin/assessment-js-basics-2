@@ -32,6 +32,15 @@
 
 //CODE HERE
 
+const pizza = {
+    name: "hamburger",
+    price: 12,
+    category: "entree",
+    popularity: 10,
+    rating: 7,
+    tags: ["meat", "burger", "high-calories"],
+  };
+
 
 
 //////////////////PROBLEM 2////////////////////
@@ -44,6 +53,8 @@
 
 //CODE HERE
 
+console.log(pizza.popularity);
+
 
 /*
     Second, log the second tag in your pizza's
@@ -53,6 +64,9 @@
 */
 
 //CODE HERE
+console.log(pizza.tags[1]);
+
+
 
 
 /*
@@ -63,6 +77,10 @@
 */
 
 //CODE HERE
+const { price } = pizza;
+console.log(price);
+
+
 
 
 /*
@@ -73,6 +91,8 @@
 */
 
 //CODE HERE
+const { category } = pizza;
+console.log(category);
 
 
 //////////////////PROBLEM 3////////////////////
@@ -88,6 +108,48 @@
 */
 
 //CODE HERE
+const foodArr = [
+    {
+      name: "spicy tenders",
+      price: 12,
+      category: "appetizer",
+      popularity: 9,
+      rating: 10,
+      tags: ["hot", "fat free", "vegan"],
+    },
+    {
+      name: "stir fry",
+      price: 16,
+      category: "beverage",
+      popularity: 4,
+      rating: 5,
+      tags: ["veggies", "vegan", "popular"],
+    },
+    {
+      name: "craw fish",
+      price: 8,
+      category: "appetizer",
+      popularity: 5,
+      rating: 6,
+      tags: ["popular", "seafood", "gluten-free"],
+    },
+    {
+      name: "veggie pizza",
+      price: 22,
+      category: "entree",
+      popularity: 8,
+      rating: 9,
+      tags: ["plant based","vegan", "veggies", "fat free",],
+    },
+    {
+      name: "grilled lamb",
+      price: 20,
+      category: "entree",
+      popularity: 7,
+      rating: 5,
+      tags: ["middle eastern", "grilled", "gluten free", "popular"],
+    },
+  ];
 
 
 
@@ -105,7 +167,8 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter((food) => food.tags.includes("popular"));
+
 
 
 
@@ -149,6 +212,19 @@
 */
 
 //CODE HERE
+function filterByProperty(property, number, type) {
+    let filterArr = [];
+    
+  
+    if (type === "above") {
+      filterArr = foodArr.filter((food) => food[property] >= number);
+  
+    } else if (type === "below") {
+      filterArr = foodArr.filter((food) => food[property] <= number);
+  
+    }
+    return filterArr;
+  }
 
 
 /*
@@ -159,3 +235,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty("rating", 8, "above"));

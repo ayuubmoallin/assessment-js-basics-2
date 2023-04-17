@@ -34,9 +34,10 @@ const cart = [
 ]
 
 //CODE HERE
-
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+const summedPrice = cart.reduce((acc, sum) => {
+    return acc + sum.price;
+  }, 0);
+  
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,6 +55,13 @@ const cart = [
 */
 
 //CODE HERE
+
+function calcFinalPrice(cartTotal, couponValue, tax) {
+    cartTotal += cartTotal * tax;
+    return cartTotal - couponValue;
+  };
+  
+
 
 
 
@@ -78,7 +86,7 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    information that restaurant need about customers is: name, phone, address and sometimes zip code. name, phone, and address will be of string type, and zip code will be int
 
 */
 
@@ -88,3 +96,10 @@ const cart = [
 */
 
 //CODE HERE
+
+const customer = {
+    name: "Jon Jones",
+    phone: "444 224 3332",
+    address: "200 1st St",
+    zipCode: 55905,
+  };
